@@ -43,7 +43,7 @@
             </thead>
             <tbody>
               <tr
-                *ngFor="let factura of facturas | busquedaFactura:busquedaNumero | paginate: {itemsPerPage: 10, currentPage: pageActual}; index as i">
+                *ngFor="let factura of facturas | busquedaFactura:busquedaNumero | paginate: {paginaActual: 10, currentPage: paginaActual}; index as i">
                 <th scope="row"> {{factura.numeropedido}}</th>
                 <td>{{factura.nombre}}</td>
                 <td>{{factura.estado}}</td>
@@ -68,7 +68,7 @@
 
             </tbody>
           </table>
-          <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+          <pagination-controls (pageChange)="paginaActual = $event"></pagination-controls>
         </div>
       </div>
     </div>

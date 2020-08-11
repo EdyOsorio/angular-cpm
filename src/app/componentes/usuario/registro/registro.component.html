@@ -35,7 +35,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let usuario of usuarios | paginate: {itemsPerPage: 5, currentPage: pageActual}; index as i">
+            <tr *ngFor="let usuario of usuarios | paginate: {itemsPerPage: 5, currentPage: paginaActual}; index as i">
               <th scope="row"> {{i+1}}</th>
               <td>{{usuario.nombre}}</td>
               <td>{{usuario.email}}</td>
@@ -54,7 +54,7 @@
             </tr>
           </tbody>
         </table>
-        <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+        <pagination-controls (pageChange)="paginaActual = $event"></pagination-controls>
       </div>
     </div>
 
@@ -112,7 +112,7 @@
               <div class="form-group espacio-alerta">
                 <label for="idcategoria">* Rol</label>
                 <select name="roleId" #roleId="ngModel" class="form-control"
-                  [(ngModel)]="this.authService.seleccionaUsuario.roleid" required>
+                  [(ngModel)]="this.authService.seleccionaUsuario.roleId" required>
                   <option selected disabled>- seleccione el rol -</option>
                   <option value="1">Administrador</option>
                   <option value="2">Empleado</option>
@@ -148,7 +148,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let usuarioE of usuariosE | paginate: {itemsPerPage: 5, currentPage: pageActual}; index as i">
+            <tr *ngFor="let usuarioE of usuariosE | paginate: {itemsPerPage: 5, currentPage: paginaActual}; index as i">
               <th scope="row"> {{i+1}}</th>
               <td>{{usuarioE.nombre}}</td>
               <td>{{usuarioE.email}}</td>
@@ -161,7 +161,7 @@
             </tr>
           </tbody>
         </table>
-        <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+        <pagination-controls (pageChange)="paginaActual = $event"></pagination-controls>
       </div>
     </div>
   </div>

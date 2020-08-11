@@ -16,8 +16,8 @@ import { NgForm } from '@angular/forms';
 })
 export class ProductoComponent implements OnInit {
 
-  constructor(private dataApiService: DataApiService) { }
-  private productos;
+  constructor(public dataApiService: DataApiService) { }
+  public productos;
   value = 'Clear me';
   busquedaNombre = '';
   faPlus = faPlus;

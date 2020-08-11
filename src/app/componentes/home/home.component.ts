@@ -10,8 +10,8 @@ import { NgForm } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private authservice: AuthService, private router: Router) { }
-  private usuario: UsuarioInterface = {
+  constructor(public authservice: AuthService, public router: Router) { }
+  usuario: UsuarioInterface = {
     email: '',
     password: ''
   };

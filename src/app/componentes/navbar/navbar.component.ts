@@ -17,7 +17,7 @@ import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService) { }
   faUserCog = faUserCog;
   faCashRegister = faCashRegister;
   faUtensils = faUtensils;

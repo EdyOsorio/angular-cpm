@@ -12,7 +12,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="form-producto" #formproducto="ngForm" (ngSubmit)="guardarproducto(formproducto)">
+        <form class="form-producto" #formproducto="ngForm" (ngSubmit)="guardarProducto(formproducto)">
           <input type="hidden" id="productoId" name="productoId" class="form-control"
             [(ngModel)]="this.dataApiService.seleccionarproducto.id">
 

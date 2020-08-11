@@ -20,7 +20,7 @@ declare var $: any;
 })
 export class RegistroComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, public router: Router) { }
   usuarios;
   todoUsuario;
   usuariosE;
@@ -34,7 +34,8 @@ export class RegistroComponent implements OnInit {
   existe = false;
   mensajeNombre = '';
   existeNombre = false;
-  private usuario: UsuarioInterface = {
+  paginaActual = 1;
+  public usuario: UsuarioInterface = {
     nombre: '',
     email: '',
     password: '',

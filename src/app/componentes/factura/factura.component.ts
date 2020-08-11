@@ -31,7 +31,7 @@ export class FacturaComponent implements OnInit {
   @ViewChild('factura') factura: ElementRef;
 
   value = 'Clear me';
-  constructor(private dataApiService: DataApiService, private authService: AuthService, private router: Router) { }
+  constructor(public dataApiService: DataApiService, public authService: AuthService, public router: Router) { }
   facturas;
   facturasProc;
   busquedaNumero = '';
@@ -49,6 +49,7 @@ export class FacturaComponent implements OnInit {
   total;
   archivoSeleccionado;
   btnFactura = true;
+  paginaActual = 1;
   ngOnInit() {
     this.listaFacturas();
   }

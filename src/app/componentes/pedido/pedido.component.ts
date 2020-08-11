@@ -25,7 +25,7 @@ declare var $: any;
 })
 export class PedidoComponent implements OnInit {
 
-  constructor(private dataApiService: DataApiService, private auth: AuthService, private router: Router) { }
+  constructor(public dataApiService: DataApiService, public auth: AuthService, public router: Router) { }
   pedidos;
   pedidosHis;
   detallePedido;
@@ -44,7 +44,7 @@ export class PedidoComponent implements OnInit {
   item;
   contacto = [{}];
   contactoH = [{}];
-
+  paginaActual = 1;
   usuarios;
   ngOnInit() {
     this.listaPedido();

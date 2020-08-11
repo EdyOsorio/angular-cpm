@@ -18,7 +18,7 @@ declare var $: any;
 })
 export class ModalComponent implements OnInit {
 
-  constructor(private dataApiService: DataApiService, private location: Location, private productoComponent: ProductoComponent) { }
+  constructor(public dataApiService: DataApiService, public location: Location, public productoComponent: ProductoComponent) { }
   comprueba = [];
   productos;
   categoria: categoriaInterface = {

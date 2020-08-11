@@ -9,7 +9,7 @@ import { UsuarioInterface } from 'src/app/modelos/usuario-interface';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService) { }
   usuario: UsuarioInterface;
   ngOnInit() {
     this.usuario = this.authService.getCurrentUser();
