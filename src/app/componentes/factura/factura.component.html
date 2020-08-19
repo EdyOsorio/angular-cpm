@@ -43,7 +43,7 @@
             </thead>
             <tbody>
               <tr
-                *ngFor="let factura of facturas | busquedaFactura:busquedaNumero | paginate: {paginaActual: 10, currentPage: paginaActual}; index as i">
+                *ngFor="let factura of facturas | busquedaFactura:busquedaNumero | paginate: {itemsPerPage: 10, currentPage: paginaActual}; index as i">
                 <th scope="row"> {{factura.numeropedido}}</th>
                 <td>{{factura.nombre}}</td>
                 <td>{{factura.estado}}</td>
@@ -305,12 +305,10 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                  <fa-icon [icon]="faTimes"></fa-icon>&nbsp;Cancelar
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                  <fa-icon [icon]="faCheck"></fa-icon>&nbsp;Cancelar
                 </button>
-                <button type="submit" class="btn btn-primary">
-                  <fa-icon [icon]="faCheck"></fa-icon>&nbsp;Aceptar
-                </button>
+                
               </div>
             </div>
           </div>

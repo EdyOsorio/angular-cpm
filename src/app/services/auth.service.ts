@@ -23,7 +23,7 @@ export class AuthService {
     estado: ''
   };
   loginuser(email: string, password: string): Observable<any> {
-    const urlApi = `https://api-cpm.herokuapp.com/api/usuarios/login?include=usuario`;
+    const urlApi = `https://cpm-api.herokuapp.com/api/usuarios/login?include=usuario`;
     return this.http.post<UsuarioInterface>(urlApi, {
       email,
       password
@@ -54,12 +54,12 @@ export class AuthService {
   }
   registroUsuario(usuario) {
     const token = localStorage.getItem('accessToken');
-    const urlApi = `https://api-cpm.herokuapp.com/api/usuarios?access_token=${token}`;
+    const urlApi = `https://cpm-api.herokuapp.com/api/usuarios?access_token=${token}`;
     return this.http.post<UsuarioInterface>(urlApi, usuario, { headers: this.headers }).pipe(map(data => data));
   }
   logoutUser() {
     const accessToken = localStorage.getItem('accessToken');
-    const urlApi = `https://api-cpm.herokuapp.com/api/usuarios/logout?access_token=${accessToken}`;
+    const urlApi = `https://cpm-api.herokuapp.com/api/usuarios/logout?access_token=${accessToken}`;
     localStorage.removeItem('accessToken');
     localStorage.removeItem('currentUser');
     return this.http.post<UsuarioInterface>(urlApi, { headers: this.headers });
@@ -67,35 +67,35 @@ export class AuthService {
 
   listaUsuario() {
     const token = localStorage.getItem('accessToken');
-    const urlApi = `https://api-cpm.herokuapp.com/api/usuarios/obtieneUsuario?access_token=${token}`;
+    const urlApi = `https://cpm-api.herokuapp.com/api/usuarios/obtieneUsuario?access_token=${token}`;
     return this.http.get<UsuarioInterface>(urlApi, { headers: this.headers }).pipe(map(data => data));
   }
   actualizaUsuario(usuario) {
     const token = localStorage.getItem('accessToken');
     const id = usuario.id;
-    const urlApi = `https://api-cpm.herokuapp.com/api/usuarios/${id}?access_token=${token}`;
+    const urlApi = `https://cpm-api.herokuapp.com/api/usuarios/${id}?access_token=${token}`;
     return this.http.put<UsuarioInterface>(urlApi, usuario, { headers: this.headers }).pipe(map(data => data));
   }
   eliminaUsuario(id) {
     const token = localStorage.getItem('accessToken');
-    const urlApi = `https://api-cpm.herokuapp.com/api/usuarios/cambiaEstado?id=${id}&access_token=${token}`;
+    const urlApi = `https://cpm-api.herokuapp.com/api/usuarios/cambiaEstado?id=${id}&access_token=${token}`;
     return this.http.put<UsuarioInterface>(urlApi, id, { headers: this.headers }).pipe(map(data => data));
   }
   listaTodoUsuario() {
     const token = localStorage.getItem('accessToken');
-    const urlApi = `https://api-cpm.herokuapp.com/api/usuarios?access_token=${token}`;
+    const urlApi = `https://cpm-api.herokuapp.com/api/usuarios?access_token=${token}`;
     return this.http.get<UsuarioInterface>(urlApi, { headers: this.headers }).pipe(map(data => data));
   }
 
   // Eliminado
   listaUsuarioEliminado() {
     const token = localStorage.getItem('accessToken');
-    const urlApi = `https://api-cpm.herokuapp.com/api/usuarios/obtieneUsuarioEliminado?access_token=${token}`;
+    const urlApi = `https://cpm-api.herokuapp.com/api/usuarios/obtieneUsuarioEliminado?access_token=${token}`;
     return this.http.get<UsuarioInterface>(urlApi, { headers: this.headers }).pipe(map(data => data));
   }
   restableceUsuario(id) {
     const token = localStorage.getItem('accessToken');
-    const urlApi = `https://api-cpm.herokuapp.com/api/usuarios/restableceEstado?id=${id}&access_token=${token}`;
+    const urlApi = `https://cpm-api.herokuapp.com/api/usuarios/restableceEstado?id=${id}&access_token=${token}`;
     return this.http.put<UsuarioInterface>(urlApi, id, { headers: this.headers }).pipe(map(data => data));
   }
 }

@@ -19,7 +19,7 @@
           <div class="form-group espacio-alerta">
             <label for="nombre">* Nombre</label>
             <input type="text" #nombre="ngModel" name="nombre" class="form-control" placeholder="Nombre del plato"
-              [(ngModel)]="this.dataApiService.seleccionarproducto.nombre" pattern="[a-zA-Z\sáéíóúñÁÉÍÓÚÑ]{2,100}"
+              [(ngModel)]="this.dataApiService.seleccionarproducto.nombre" pattern="[a-zA-Z0-9\sáéíóúñÁÉÍÓÚÑ]{2,100}"
               required>
           </div>
           <div class="alert alert-light alerta espacio-alerta" role="alert" *ngIf="nombre.touched && !nombre.valid">

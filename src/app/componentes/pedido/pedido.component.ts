@@ -121,7 +121,7 @@ export class PedidoComponent implements OnInit {
     }).then((result) => {
       this.cargaListaFacturas();
       $('#modalDetallePedido').modal('hide');
-      this.router.navigate(['/factura']);
+      this.router.navigate(['/orden_pedido']);
     });
   }
 }
